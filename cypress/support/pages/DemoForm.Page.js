@@ -63,6 +63,13 @@ class DemoForm {
         .click();
         cy.get('.elementor-message.elementor-message-success').should('have.text','The form was sent successfully.')
     }
+    clickOngetWorkStationBtn() {
+        cy.contains('Get Workstation').click();
+    }
+    titleAvailable(){
+    cy.get('#elementor-popup-modal-406522 > div.dialog-widget-content.dialog-lightbox-widget-content.animated > div.dialog-message.dialog-lightbox-message > div > div > section > div > div > div > div > div > div.elementor-element.elementor-element-5f88730d.elementor-widget.elementor-widget-heading > div > h2')
+    .should('have.text','Request a Demo');
+    }
 
 }
 

@@ -1,14 +1,14 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 1,
-    "passes": 1,
+    "tests": 2,
+    "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2021-06-20T10:53:51.844Z",
-    "end": "2021-06-20T10:54:09.587Z",
-    "duration": 17743,
-    "testsRegistered": 1,
+    "start": "2021-06-20T11:23:40.373Z",
+    "end": "2021-06-20T11:23:56.446Z",
+    "duration": 16073,
+    "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ecebaf28-1bfd-4dec-9627-3d106118be6e",
+      "uuid": "81552d50-7c67-4cd8-9c3c-272123bb65f6",
       "title": "",
       "fullFile": "cypress/integration/home_page_spec.js",
       "file": "cypress/integration/home_page_spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "af5aaf3b-e87c-4b8e-821d-0503a6e167c3",
+          "uuid": "b754542e-dce3-45d2-927d-1d23ffe44276",
           "title": "Request demo of walkme-workstation",
           "fullFile": "",
           "file": "",
@@ -35,32 +35,51 @@
           "afterHooks": [],
           "tests": [
             {
-              "title": "Positive flow submit form for new customer was successful",
-              "fullTitle": "Request demo of walkme-workstation Positive flow submit form for new customer was successful",
+              "title": "Positive flow submit form for new customer was successful after click on submit form button",
+              "fullTitle": "Request demo of walkme-workstation Positive flow submit form for new customer was successful after click on submit form button",
               "timedOut": null,
-              "duration": 17645,
+              "duration": 11931,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "newDemo.enterFirstName();\nnewDemo.enterLastName();\nnewDemo.enterEmail();\nnewDemo.enterCompany();\nnewDemo.enterPhone();\nnewDemo.isCustomerExistDropdown(); //new customer\nnewDemo.clickSubmitForm();",
+              "code": "newDemo.clickOnDemoRequestBtn();\nnewDemo.titleAvailable();\nnewDemo.enterFirstName();\nnewDemo.enterLastName();\nnewDemo.enterEmail();\nnewDemo.enterCompany();\nnewDemo.enterPhone();\nnewDemo.isCustomerExistDropdown(); //new customer\nnewDemo.clickSubmitForm();",
               "err": {},
-              "uuid": "66ed1aa4-0c02-4211-a4df-c37a99fee243",
-              "parentUUID": "af5aaf3b-e87c-4b8e-821d-0503a6e167c3",
+              "uuid": "c070d879-149d-42bb-af59-ec3491eb1acd",
+              "parentUUID": "b754542e-dce3-45d2-927d-1d23ffe44276",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Positive flow submit form for new customer was successful after click on get workstation button",
+              "fullTitle": "Request demo of walkme-workstation Positive flow submit form for new customer was successful after click on get workstation button",
+              "timedOut": null,
+              "duration": 4105,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "newDemo.clickOngetWorkStationBtn();\nnewDemo.titleAvailable();",
+              "err": {},
+              "uuid": "319c333e-27f4-4291-ad17-4d58966a0c2a",
+              "parentUUID": "b754542e-dce3-45d2-927d-1d23ffe44276",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "66ed1aa4-0c02-4211-a4df-c37a99fee243"
+            "c070d879-149d-42bb-af59-ec3491eb1acd",
+            "319c333e-27f4-4291-ad17-4d58966a0c2a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 17645,
+          "duration": 16036,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
