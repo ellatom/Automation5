@@ -3,7 +3,7 @@ const api_key = "d1e8231f1809af85c251968b74a7d6d5-24e2ac64-f9ef2521";
 const mailgun = require('mailgun-js')({ apiKey: api_key, domain: DOMAIN });
 
 const fs = require('fs');
-let filePath = require('/home/ellatom/Desktop/HTMLSENDBOX/NodeServer/CypressAutomation/mochawesome-report/mochawesome.json');
+let filePath = require('../../../mochawesome-report/mochawesome.json');
 
 
 // fs.readFile(filePath, { encoding: 'utf-8' }, function (err, data) {
