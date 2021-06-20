@@ -1,0 +1,13 @@
+{
+    "baseUrl": "https://www.walkme.com/knowledge/walkme-workstation/",
+    "viewportWidth": 2436,
+    "viewportHeight": 1125,
+    "reporter": "mochawesome",
+    "reporterOptions": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "inline":true
+    }
+}
