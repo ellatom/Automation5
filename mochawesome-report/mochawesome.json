@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2021-06-20T10:25:17.938Z",
-    "end": "2021-06-20T10:26:06.722Z",
-    "duration": 48784,
+    "start": "2021-06-20T10:53:51.844Z",
+    "end": "2021-06-20T10:54:09.587Z",
+    "duration": 17743,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b95d7b9a-bba6-41e7-95aa-c01e0d1e8d1e",
+      "uuid": "ecebaf28-1bfd-4dec-9627-3d106118be6e",
       "title": "",
       "fullFile": "cypress/integration/home_page_spec.js",
       "file": "cypress/integration/home_page_spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "6e8541a8-09bb-48a7-a476-58b5de06051b",
+          "uuid": "af5aaf3b-e87c-4b8e-821d-0503a6e167c3",
           "title": "Request demo of walkme-workstation",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Positive flow submit form for new customer was successful",
               "fullTitle": "Request demo of walkme-workstation Positive flow submit form for new customer was successful",
               "timedOut": null,
-              "duration": 48613,
+              "duration": 17645,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "newDemo.enterFirstName();\nnewDemo.enterLastName();\nnewDemo.enterEmail();\nnewDemo.enterCompany();\nnewDemo.enterPhone();\nnewDemo.isCustomerExistDropdown(); //new customer\nnewDemo.clickSubmitForm();",
               "err": {},
-              "uuid": "57560ad9-f794-449f-b937-df5447492d76",
-              "parentUUID": "6e8541a8-09bb-48a7-a476-58b5de06051b",
+              "uuid": "66ed1aa4-0c02-4211-a4df-c37a99fee243",
+              "parentUUID": "af5aaf3b-e87c-4b8e-821d-0503a6e167c3",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "57560ad9-f794-449f-b937-df5447492d76"
+            "66ed1aa4-0c02-4211-a4df-c37a99fee243"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 48613,
+          "duration": 17645,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
