@@ -50,6 +50,19 @@ class DemoForm {
     }
     clickOnDemoRequestBtn() {
         cy.contains('Request a Demo').click();
+        this.checkSuccesfulNavigation();
+    }
+    checkSuccesfulNavigation(){
+        cy.intercept({
+            method:'POST',
+            url:'https://staging-ec.walkme.com/event/tell'
+            }).as('demoForm');
+
+        cy.wait('@demoForm').then(demoForm=>{
+            expect(demoForm.response.statusCode).to.eq(200)
+            expect(demoForm.response.body).to.eq('ok');
+            });
+        // cy.wait('@demoForm').its('response.statusCode').should('eq',200);
     }
     isCustomerExistDropdown() {
         cy.fixture('customer.json').then((customer) => {
@@ -59,7 +72,7 @@ class DemoForm {
         });
     }
     clickSubmitForm() {
-        cy.get('.elementor-field-group.elementor-column.elementor-field-type-submit.elementor-col-100.e-form__buttons')
+        cy.get('.elementor-field-type-submit > .elementor-button')
         .click();
         cy.get('.elementor-message.elementor-message-success').should('have.text','The form was sent successfully.')
     }
@@ -67,7 +80,7 @@ class DemoForm {
         cy.contains('Get Workstation').click();
     }
     titleAvailable(){
-    cy.get('#elementor-popup-modal-406522 > div.dialog-widget-content.dialog-lightbox-widget-content.animated > div.dialog-message.dialog-lightbox-message > div > div > section > div > div > div > div > div > div.elementor-element.elementor-element-5f88730d.elementor-widget.elementor-widget-heading > div > h2')
+    cy.get('.elementor-element-5f88730d > .elementor-widget-container > .elementor-heading-title')
     .should('have.text','Request a Demo');
     }
 
