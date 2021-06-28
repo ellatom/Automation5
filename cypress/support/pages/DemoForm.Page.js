@@ -3,50 +3,40 @@ class DemoForm {
         return require('../locators/DemoForm.locators');
     }
 
-    enterFirstName() {
-        cy.fixture('customer.json').then((customer) => {
+    enterFirstName(firstName) {
             cy.get(this.getDemoFormPageElements().FIRST_NAME_INPUT)
                 .click()
                 .clear()
-                .type(customer.firstName)
-                .should('have.value', customer.firstName);
-        });
+                .type(firstName)
+                .should('have.value', firstName);
     }
-    enterLastName() {
-        cy.fixture('customer.json').then((customer) => {
+    enterLastName(lastName) {
             cy.get(this.getDemoFormPageElements().LAST_NAME_INPUT)
                 .click()
                 .clear()
-                .type(customer.lastName)
-                .should('have.value', customer.lastName);
-        });
+                .type(lastName)
+                .should('have.value', lastName);
     }
-    enterEmail() {
-        cy.fixture('customer.json').then((customer) => {
+    enterEmail(email) {
             cy.get(this.getDemoFormPageElements().EMAIL_INPUT)
                 .click()
                 .clear()
-                .type(customer.email)
-                .should('have.value', customer.email);
-        });
+                .type(email)
+                .should('have.value', email);
     }
-    enterCompany() {
-        cy.fixture('customer.json').then((customer) => {
+    enterCompany(company) {
             cy.get(this.getDemoFormPageElements().COMPANY_INPUT)
                 .click()
                 .clear()
-                .type(customer.company)
-                .should('have.value', customer.company);
-        });
+                .type(company)
+                .should('have.value', company);
     }
     enterPhone(phone) {
-        cy.fixture('customer.json').then((customer) => {
             cy.get(this.getDemoFormPageElements().PHONE_INPUT)
                 .click()
                 .clear()
-                .type(customer.phone)
-                .should('have.value', customer.phone);
-        });
+                .type(phone)
+                .should('have.value', phone);
     }
     clickOnDemoRequestBtn() {
         cy.contains('Request a Demo').click();
