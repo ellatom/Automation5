@@ -1,46 +1,29 @@
+
+let pageElements = require('../locators/DemoForm.locators');
+
 class DemoForm {
-    getDemoFormPageElements() {
-        return require('../locators/DemoForm.locators');
+    
+    insertDetails(data)
+    {
+        this.typeInput(data.firstName,pageElements.FIRST_NAME_INPUT);
+        this.typeInput(data.lastName,pageElements.LAST_NAME_INPUT);
+        this.typeInput(data.email,pageElements.EMAIL_INPUT);
+        this.typeInput(data.company,pageElements.COMPANY_INPUT);
+        this.typeInput(data.phone,pageElements.PHONE_INPUT);
+        this.isCustomerExistDropdown(data.customerExist);//new customer
+    }
+    typeInput(inputData,locator) {
+            cy.get(locator)
+                .click()
+                .clear()
+                .type(inputData)
+                .should('have.value', inputData);
     }
 
-    enterFirstName(firstName) {
-            cy.get(this.getDemoFormPageElements().FIRST_NAME_INPUT)
-                .click()
-                .clear()
-                .type(firstName)
-                .should('have.value', firstName);
-    }
-    enterLastName(lastName) {
-            cy.get(this.getDemoFormPageElements().LAST_NAME_INPUT)
-                .click()
-                .clear()
-                .type(lastName)
-                .should('have.value', lastName);
-    }
-    enterEmail(email) {
-            cy.get(this.getDemoFormPageElements().EMAIL_INPUT)
-                .click()
-                .clear()
-                .type(email)
-                .should('have.value', email);
-    }
-    enterCompany(company) {
-            cy.get(this.getDemoFormPageElements().COMPANY_INPUT)
-                .click()
-                .clear()
-                .type(company)
-                .should('have.value', company);
-    }
-    enterPhone(phone) {
-            cy.get(this.getDemoFormPageElements().PHONE_INPUT)
-                .click()
-                .clear()
-                .type(phone)
-                .should('have.value', phone);
-    }
     clickOnDemoRequestBtn() {
         cy.contains('Request a Demo').click();
         this.checkSuccesfulNavigation();
+        this.titleAvailable();
     }
     checkSuccesfulNavigation(){
         cy.intercept({
@@ -56,7 +39,7 @@ class DemoForm {
     }
     isCustomerExistDropdown() {
         cy.fixture('customer.json').then((customer) => {
-            cy.get(this.getDemoFormPageElements().EXISTING_CUSTOMER_INPUT)
+            cy.get(pageElements.EXISTING_CUSTOMER_INPUT)
                 .select(customer.customerExist)
                 .should('have.value', customer.customerExist);
         });

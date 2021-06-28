@@ -20,13 +20,7 @@ describe('Request demo of walkme-workstation', () => {
     it('Positive flow submit form for new customer was successful after click on submit form button', () => {
 
         newDemo.clickOnDemoRequestBtn();
-        newDemo.titleAvailable();
-        newDemo.enterFirstName(data.firstName);
-        newDemo.enterLastName(data.lastName);
-        newDemo.enterEmail(data.email);
-        newDemo.enterCompany(data.company);
-        newDemo.enterPhone(data.phone);
-        newDemo.isCustomerExistDropdown(data.customerExist);//new customer
+        newDemo.insertDetails(data);
         // newDemo.clickSubmitForm();
     })
     it('Positive flow submit form for new customer was successful after click on get workstation button', () => {
