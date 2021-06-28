@@ -1,32 +1,22 @@
-import DemoForm from "../support/pages/DemoForm.Page";
+import Home from "../support/pages/Home.Page";
 
 describe('Request demo of walkme-workstation', () => {
     
-    let newDemo;
-    let data;
-
-    before(() => {
-        cy.fixture('customer.json').then((customerData)=> {
-            data = customerData;
-        })
-    })
-
+    let newHome;
 
     beforeEach(() => {
         cy.visit('/');
-        newDemo = new DemoForm();
+        newHome =new Home();
     })
 
-    it('Positive flow submit form for new customer was successful after click on submit form button', () => {
+    it('navigation from homepage to demoForm by clicking on request on demo was successful', () => {
 
-        newDemo.clickOnDemoRequestBtn();
-        newDemo.insertDetails(data);
-        // newDemo.clickSubmitForm();
+        newHome.clickOnDemoRequestBtn();
     })
-    it('Positive flow submit form for new customer was successful after click on get workstation button', () => {
 
-        newDemo.clickOngetWorkStationBtn();
-        newDemo.titleAvailable();
+    it('navigation from homepage to demoForm by clicking on get workstation was successful', () => {        
+        newHome.clickOngetWorkStationBtn();
     })
+
     // TBD add negative flow...
 })
