@@ -1,10 +1,10 @@
 
-let pageElements = require('../locators/DemoForm.locators');
+let pageElements = require('../locators/Home.locators');
 
 class Home {
 
     clickOnDemoRequestBtn() {
-        cy.clickOnBtnByText('Request a Demo');
+        cy.clickOnBtnByText(pageElements.FORM_TITLE_TEXT);
         this.checkSuccesfulNavigation();
         cy.confirmTextExist(pageElements.FORM_TITLE,pageElements.FORM_TITLE_TEXT);
     }
@@ -17,8 +17,10 @@ class Home {
         cy.wait('@demoForm').then(demoForm => {
             expect(demoForm.response.statusCode).to.eq(200)
             expect(demoForm.response.body).to.eq('ok');
+            // cy.log(demoForm.response.body);
         });
         // cy.wait('@demoForm').its('response.statusCode').should('eq',200);
+        // cy.screenshot('Navigation to form was successful');
     }
 
     clickOngetWorkStationBtn() {
